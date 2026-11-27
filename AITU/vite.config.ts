@@ -1,16 +1,17 @@
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
   devtools: {
     // Remove this `apply` property to enable devtools for build as well
-    apply: 'serve',
+    apply: "serve",
   },
   plugins: [react()],
+  base: "/AITU/",
   server: {
     proxy: {
-      '/api': 'http://localhost:3001',
+      "/api": "http://localhost:3001",
     },
   },
-})
+});
